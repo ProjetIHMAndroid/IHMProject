@@ -1,4 +1,4 @@
-package univ.amu.familleApplication;
+package univ.amu.applicationfamille;
 
 import android.os.Bundle;
 import android.app.Activity;
