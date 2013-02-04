@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="title_activity_login">Connexion</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in_register"><b>Connexion</b> ou enregistrement</string>
+    <string name="action_sign_in_short">Connexion</string>
+    <string name="menu_forgot_password">Récupérer le mot de passe oublié</string>
+    <string name="login_progress_signing_in">Connexion...</string>
+    <string name="error_invalid_email">Cette adresse email est invalide</string>
+    <string name="error_invalid_password">Ce mot de passe est trop court</string>
+    <string name="error_incorrect_password">Mauvais mot de passe</string>
+    <string name="error_field_required">Champ requis</string>
+
+</resources>
