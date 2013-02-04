@@ -91,11 +91,10 @@ public class MainActivity extends FragmentActivity implements
 
 	@Override
 	public boolean onNavigationItemSelected(int position, long id) {
-		// When the given dropdown item is selected, show its contents in the
-		// container view.
-		Fragment fragment = new DummySectionFragment();
+		// Actions effectuées à la sélection d'unélément du dropdown menu
+		Fragment fragment = new FamilleFragment();
 		Bundle args = new Bundle();
-		args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
+		args.putInt(FamilleFragment.ARG_SECTION_NUMBER, position + 1);
 		fragment.setArguments(args);
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.container, fragment).commit();
@@ -106,24 +105,38 @@ public class MainActivity extends FragmentActivity implements
 	 * A dummy fragment representing a section of the app, but that simply
 	 * displays dummy text.
 	 */
-	public static class DummySectionFragment extends Fragment {
+	public static class FamilleFragment extends Fragment {
 		/**
 		 * The fragment argument representing the section number for this
 		 * fragment.
 		 */
 		public static final String ARG_SECTION_NUMBER = "section_number";
 
-		public DummySectionFragment() {
+		public FamilleFragment() {
 		}
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
+			
+			switch (getArguments().getInt(ARG_SECTION_NUMBER)){
+			case 1:// Agenda
+				return inflater.inflate(R.layout.activity_agenda, container, false);
+			case 2:// Gestion des repas
+				
+				break;
+			case 3:// Liste des courses
+				
+				break;
+			default:
+				break;
+			}
+			
 			// Create a new TextView and set its text to the fragment's section
 			// number argument value.
 			TextView textView = new TextView(getActivity());
 			textView.setGravity(Gravity.CENTER);
-			textView.setText(Integer.toString(getArguments().getInt(
+			textView.setText("Fragment numéro : "+Integer.toString(getArguments().getInt(
 					ARG_SECTION_NUMBER)));
 			return textView;
 		}

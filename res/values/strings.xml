@@ -7,5 +7,6 @@
     <string name="title_agenda">Agenda</string>
     <string name="title_menu">Menu repas</string>
     <string name="title_liste_course">Liste des courses</string>
+    <string name="agenda">Bienvenue sur l\'activité d\'agenda</string>
 
 </resources>
