@@ -17,13 +17,14 @@ public final class R {
         public static final int boutonTest=0x7f070008;
         public static final int container=0x7f070007;
         public static final int email=0x7f070003;
+        public static final int listView1=0x7f070009;
+        public static final int liste_course=0x7f07000a;
         public static final int login=0x7f070005;
         public static final int login_form=0x7f070002;
         public static final int login_status=0x7f070000;
         public static final int login_status_message=0x7f070001;
-        public static final int menu_forgot_password=0x7f07000b;
-        public static final int menu_settings=0x7f07000a;
-        public static final int mylist=0x7f070009;
+        public static final int menu_forgot_password=0x7f07000c;
+        public static final int menu_settings=0x7f07000b;
         public static final int password=0x7f070004;
         public static final int sign_in_button=0x7f070006;
     }
