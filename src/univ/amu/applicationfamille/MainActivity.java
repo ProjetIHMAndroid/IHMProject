@@ -4,14 +4,13 @@ import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.NavUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -19,6 +18,8 @@ import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
+	
+	private AgendaFragment AgendaFragment = new AgendaFragment();
 
 	/**
 	 * The serialization (saved instance state) Bundle key representing the
@@ -91,55 +92,21 @@ public class MainActivity extends FragmentActivity implements
 
 	@Override
 	public boolean onNavigationItemSelected(int position, long id) {
-		// Actions effectuées à la sélection d'unélément du dropdown menu
-		Fragment fragment = new FamilleFragment();
-		Bundle args = new Bundle();
-		args.putInt(FamilleFragment.ARG_SECTION_NUMBER, position + 1);
-		fragment.setArguments(args);
-		getSupportFragmentManager().beginTransaction()
-				.replace(R.id.container, fragment).commit();
-		return true;
-	}
-
-	/**
-	 * A dummy fragment representing a section of the app, but that simply
-	 * displays dummy text.
-	 */
-	public static class FamilleFragment extends Fragment {
-		/**
-		 * The fragment argument representing the section number for this
-		 * fragment.
-		 */
-		public static final String ARG_SECTION_NUMBER = "section_number";
-
-		public FamilleFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			
-			switch (getArguments().getInt(ARG_SECTION_NUMBER)){
-			case 1:// Agenda
-				return inflater.inflate(R.layout.activity_agenda, container, false);
-			case 2:// Gestion des repas
-				
+		switch (position){
+			case 0:// Agenda
+				getSupportFragmentManager().beginTransaction().replace(R.id.container, this.AgendaFragment).commit();
+				return true;
+			case 1:// Gestion des repas
+				getSupportFragmentManager().beginTransaction().replace(R.id.container, this.AgendaFragment).commit();
 				break;
-			case 3:// Liste des courses
-				
+			case 2:// Liste des courses
+				getSupportFragmentManager().beginTransaction().replace(R.id.container, this.AgendaFragment).commit();
 				break;
 			default:
 				break;
-			}
-			
-			// Create a new TextView and set its text to the fragment's section
-			// number argument value.
-			TextView textView = new TextView(getActivity());
-			textView.setGravity(Gravity.CENTER);
-			textView.setText("Fragment numéro : "+Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
-			return textView;
 		}
+		
+		return true;
 	}
 
 }

@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="univ.amu.applicationfamille.AgendaActivity"
+            android:name="univ.amu.applicationfamille.AgendaFragment"
             android:label="@string/app_name" >
         </activity>
         
