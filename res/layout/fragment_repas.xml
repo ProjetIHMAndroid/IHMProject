@@ -4,13 +4,14 @@
     android:layout_height="match_parent"
     tools:context=".AgendaActivity" >
 
-    <Button
-        android:id="@+id/boutonTest"
-        android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="66dp"
-        android:text="@string/agenda" />
+        android:layout_marginBottom="21dp"
+        android:layout_marginLeft="87dp" >
+
+    </ListView>
 
 </RelativeLayout>
