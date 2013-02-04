@@ -19,7 +19,9 @@ import android.widget.TextView;
 public class MainActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 	
-	private AgendaFragment AgendaFragment = new AgendaFragment();
+	private AgendaFragment agendaFragment = new AgendaFragment();
+	private RepasFragment repasFragment = new RepasFragment();
+	private ListeCourseFragment listeCourseFragment = new ListeCourseFragment();
 
 	/**
 	 * The serialization (saved instance state) Bundle key representing the
@@ -94,13 +96,13 @@ public class MainActivity extends FragmentActivity implements
 	public boolean onNavigationItemSelected(int position, long id) {
 		switch (position){
 			case 0:// Agenda
-				getSupportFragmentManager().beginTransaction().replace(R.id.container, this.AgendaFragment).commit();
+				getSupportFragmentManager().beginTransaction().replace(R.id.container, this.agendaFragment).commit();
 				return true;
 			case 1:// Gestion des repas
-				getSupportFragmentManager().beginTransaction().replace(R.id.container, this.AgendaFragment).commit();
+				getSupportFragmentManager().beginTransaction().replace(R.id.container, this.repasFragment).commit();
 				break;
 			case 2:// Liste des courses
-				getSupportFragmentManager().beginTransaction().replace(R.id.container, this.AgendaFragment).commit();
+				getSupportFragmentManager().beginTransaction().replace(R.id.container, this.listeCourseFragment).commit();
 				break;
 			default:
 				break;
