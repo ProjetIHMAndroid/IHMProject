@@ -25,7 +25,7 @@ public class ListeCourseFragment extends ListFragment {
         map.put("description", "Editeur de texte");
         listItem.add(map);
  
-        /*map = new HashMap<String, String>();
+        map = new HashMap<String, String>();
         map.put("titre", "Excel");
         map.put("description", "Tableur");
         listItem.add(map);
@@ -38,7 +38,7 @@ public class ListeCourseFragment extends ListFragment {
         map = new HashMap<String, String>();
         map.put("titre", "Outlook");
         map.put("description", "Client de courrier électronique");
-        listItem.add(map);*/
+        listItem.add(map);
  
         SimpleAdapter myAdapter = new SimpleAdapter (getActivity().getBaseContext(), listItem, R.layout.affichageitem,
                new String[] {"titre", "description"}, new int[] {R.id.titre, R.id.description});
