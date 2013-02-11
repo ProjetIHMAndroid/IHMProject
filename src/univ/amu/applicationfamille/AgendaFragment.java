@@ -1,17 +1,10 @@
 package univ.amu.applicationfamille;
 
-import java.security.Timestamp;
-import java.util.Calendar;
-import java.util.Date;
-
-import android.app.Activity;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
 
 public class AgendaFragment extends Fragment {
 
