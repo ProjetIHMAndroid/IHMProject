@@ -2,11 +2,12 @@
 <resources>
 
     <string name="app_name">ApplicationFamille</string>
-    <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_agenda">Agenda</string>
     <string name="title_menu">Menu repas</string>
     <string name="title_liste_course">Liste des courses</string>
     <string name="agenda">Bienvenue sur l\'activité d\'agenda</string>
-
+	<string name="hello">Open calendar</string>
+	<string name="open">Open</string>
+	
 </resources>

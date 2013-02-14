@@ -86,7 +86,7 @@ public class MainActivity extends FragmentActivity implements
 	}
 
 	@Override
-	public boolean onNavigationItemSelected(int position, long id) {
+	public boolean onNavigationItemSelected(int position, long id){
 		switch (position){
 			case 0:// Agenda
 				getSupportFragmentManager().beginTransaction().replace(R.id.container, this.agendaFragment).commit();
