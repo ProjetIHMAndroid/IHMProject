@@ -11,6 +11,9 @@ import android.widget.SimpleAdapter;
 
 public class ListeCourseFragment extends ListFragment {
 
+	/**
+	 * Création de la liste des courses de facon staticp our le moment
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -19,27 +22,23 @@ public class ListeCourseFragment extends ListFragment {
         HashMap<String, String> map;
  
         map = new HashMap<String, String>();
-        map.put("titre", "Word");
-        map.put("description", "Editeur de texte");
+        map.put("titre", "Pizza");
         listItem.add(map);
  
         map = new HashMap<String, String>();
-        map.put("titre", "Excel");
-        map.put("description", "Tableur");
+        map.put("titre", "Coca");
         listItem.add(map);
  
         map = new HashMap<String, String>();
-        map.put("titre", "Power Point");
-        map.put("description", "Logiciel de présentation");
+        map.put("titre", "Fruits");
         listItem.add(map);
  
         map = new HashMap<String, String>();
-        map.put("titre", "Outlook");
-        map.put("description", "Client de courrier électronique");
+        map.put("titre", "Salade");
         listItem.add(map);
  
         SimpleAdapter myAdapter = new SimpleAdapter (getActivity().getBaseContext(), listItem, R.layout.affichageitem,
-               new String[] {"titre", "description"}, new int[] {R.id.titre, R.id.description});
+               new String[] {"titre"}, new int[] {R.id.titre});
  
        setListAdapter(myAdapter);
        

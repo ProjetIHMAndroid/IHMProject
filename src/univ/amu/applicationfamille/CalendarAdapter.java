@@ -11,13 +11,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CalendarAdapter extends BaseAdapter {
-	static final int FIRST_DAY_OF_WEEK =0; // Dimanche = 0, Lundi = 1
+	/**
+	 * Défini le remier jour de la semaine
+	 * Dimanche = 0, Lundi = 1
+	 */
+	static final int FIRST_DAY_OF_WEEK = 1;
 	
 	private Context mContext;
     private java.util.Calendar month;
     private Calendar selectedDate;
     private ArrayList<String> items;
+
+    // référence des rendez vous
+    public String[] days;
     
+    /**
+     * Constructeur de la class
+     * @param Context c
+     * @param Calendar monthCalendar
+     */
     public CalendarAdapter(Context c, Calendar monthCalendar) {
     	month = monthCalendar;
     	selectedDate = (Calendar)monthCalendar.clone();
@@ -27,6 +39,10 @@ public class CalendarAdapter extends BaseAdapter {
         refreshDays();
     }
     
+    /**
+     * Set les items (rendez vous) du calendrier
+     * @param ArrayList<String> items
+     */
     public void setItems(ArrayList<String> items) {
     	for(int i = 0;i != items.size();i++){
     		if(items.get(i).length()==1) {
@@ -37,19 +53,30 @@ public class CalendarAdapter extends BaseAdapter {
     }
     
 
+    /**
+     * Renvoie le nombre de rendez vous
+     */
     public int getCount() {
         return days.length;
     }
 
+    /**
+     * Sert à rien
+     */
     public Object getItem(int position) {
         return null;
     }
 
+    /**
+     * Sert à rien
+     */
     public long getItemId(int position) {
         return 0;
     }
 
-    // create a new view for each item referenced by the Adapter
+    /**
+     * Créer une nouvelle view à chaque item référencé par l'adapter
+     */
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
     	TextView dayView;
@@ -97,15 +124,17 @@ public class CalendarAdapter extends BaseAdapter {
         return v;
     }
     
+    /**
+     * Regénère les rendez vous
+     */
     public void refreshDays()
     {
-    	// clear items
+    	// supprime les rendez-vous existant
     	items.clear();
     	
     	int lastDay = month.getActualMaximum(Calendar.DAY_OF_MONTH);
         int firstDay = (int)month.get(Calendar.DAY_OF_WEEK);
         
-        // figure size of the array
         if(firstDay==1){
         	days = new String[lastDay+(FIRST_DAY_OF_WEEK*6)];
         }
@@ -115,7 +144,6 @@ public class CalendarAdapter extends BaseAdapter {
         
         int j=FIRST_DAY_OF_WEEK;
         
-        // populate empty days before first real day
         if(firstDay>1) {
 	        for(j=0;j<firstDay-FIRST_DAY_OF_WEEK;j++) {
 	        	days[j] = "";
@@ -125,17 +153,13 @@ public class CalendarAdapter extends BaseAdapter {
 	    	for(j=0;j<FIRST_DAY_OF_WEEK*6;j++) {
 	        	days[j] = "";
 	        }
-	    	j=FIRST_DAY_OF_WEEK*6+1; // Dimanche => 1, Lundi => 7
+	    	j=FIRST_DAY_OF_WEEK*6+1;
 	    }
         
-        // populate days
         int dayNumber = 1;
         for(int i=j-1;i<days.length;i++) {
         	days[i] = ""+dayNumber;
         	dayNumber++;
         }
     }
-
-    // references to our items
-    public String[] days;
 }

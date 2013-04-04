@@ -9,5 +9,7 @@
     <string name="agenda">Bienvenue sur l\'activité d\'agenda</string>
 	<string name="hello">Open calendar</string>
 	<string name="open">Open</string>
+	<string name="previous">&lt;&lt;</string>
+	<string name="next">&gt;&gt;</string>
 	
 </resources>

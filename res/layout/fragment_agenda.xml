@@ -26,6 +26,7 @@
     android:textStyle="bold"
     android:textColor="@color/white"
     android:gravity="center_horizontal"
+    android:text="@string/previous"
     android:clickable="true"   
     />
 </LinearLayout>
@@ -60,6 +61,7 @@
     android:textStyle="bold"
     android:textColor="@color/white"
     android:gravity="center_horizontal"
+    android:text="@string/next"
     android:clickable="true"
     />
 </LinearLayout>

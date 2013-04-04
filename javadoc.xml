@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="private" author="true" classpath="libs/android-support-v4.jar" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="univ.amu.applicationfamille" source="1.6" sourcepath="src;gen" splitindex="true" use="true" version="true">
+            <link href="file:/C:/Users/florian/Documents/GitHub/IHMProject/doc/"/>
+            <link href="file:/C:/Users/florian/Documents/eclipse android/sdk/docs/reference"/>
+        </javadoc>
+    </target>
+</project>
